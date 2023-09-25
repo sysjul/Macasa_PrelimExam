@@ -1,0 +1,9 @@
+
+192.168.56.117  ansible_python_interpreter=/usr/bin/python3
+192.168.56.117  apache_package=apache2 php_package=libapache2-mod-php
+
+192.168.56.118  ansible_python_interpreter=/usr/bin/python3
+192.168.56.118  apache_package=apache2 php_package=libapache2-mod-php
+
+192.168.56.119  ansible_python_interpreter=/usr/bin/python3
+192.168.56.119  apache_package=apache2 php_package=libapache2-mod-php
