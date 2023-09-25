@@ -1,0 +1,41 @@
+---
+- name: Configure Managed Nodes
+  hosts: all
+  become: yes
+
+  vars_files:
+    - config.yaml
+
+  tasks:
+    - name: Install Python 3 and pip3
+      apt:
+        name: "{{ item }}"
+        state: latest
+      loop:
+        - python3
+        - python3-pip
+
+    - name: Set Python3 as default
+      alternatives:
+        name: python
+        path: /usr/bin/python3
+
+    - name: Set pip3 as default
+      alternatives:
+        name: pip
+        path: /usr/bin/pip3
+
+    - name: Install OpenJDK
+      apt:
+        name: openjdk-11-jdk
+        state: present
+
+    - name: Set MOTD
+      template:
+        src: motd.j2
+        dest: /etc/motd
+
+    - name: Create a new user
+      user:
+        name: "{{ new_user_name }}"
+        state: present

@@ -1,5 +1,5 @@
 python_version: 3
 pip_version: 3
 motd_text: "Welcome to my managed node!"
-remote_user : jul
+new_user_name: jul
 
